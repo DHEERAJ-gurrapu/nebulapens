@@ -126,7 +126,7 @@
   <!-- GOOGLE SCRIPT + LOGIC -->
   <script>
 
-    const SCRIPT_URL = "https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec";
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzoeh6ltmbewred-Gd--1fSFHouUHgflFUuuHIPRXYYrKf_ck7dRiND2mJFJRjgK7H-/exec";
 
     let order = {};
 
@@ -181,7 +181,7 @@
       showPage("page4");
     }
 
-    // SEND TO GOOGLE SHEETS
+    // SEND DATA TO GOOGLE SCRIPT
     function sendToGoogle() {
       fetch(SCRIPT_URL, {
         method: "POST",
@@ -195,4 +195,5 @@
 
 </body>
 </html>
+
 
