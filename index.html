@@ -1,199 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Custom Pens - Personalized Writing Instruments</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nebula Pens – Order Now</title>
   <style>
-    *{margin:0;padding:0;box-sizing:border-box}
-    body{font-family:'Segoe UI',Tahoma, Geneva, Verdana, sans-serif;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);min-height:100vh;padding:20px}
-    .hero-section{text-align:center;color:#fff;padding:40px 20px;max-width:1200px;margin:0 auto 30px}
-    .hero-section h1{font-size:3.5em;margin-bottom:15px;text-shadow:2px 2px 4px rgba(0,0,0,.3)}
-    .hero-section p{font-size:1.3em;text-shadow:1px 1px 2px rgba(0,0,0,.3)}
-    .pen-showcase{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;max-width:1200px;margin:0 auto 40px;padding:0 20px}
-    .pen-card{background:#fff;border-radius:15px;padding:20px;box-shadow:0 10px 30px rgba(0,0,0,.2);text-align:center;transition:transform .3s ease}
-    .pen-card:hover{transform:translateY(-10px) scale(1.05)}
-    .pen-image{font-size:80px;margin-bottom:10px}
-    .pen-card h3{color:#667eea;margin-bottom:5px}
-    .pen-card p{color:#666;font-size:.9em}
-    .container{background:#fff;border-radius:20px;box-shadow:0 20px 60px rgba(0,0,0,.3);max-width:700px;width:100%;padding:40px;margin:0 auto}
-    .page{display:none}.page.active{display:block}
-    h2{color:#667eea;margin-bottom:10px;font-size:2em}
-    .subtitle{color:#666;margin-bottom:30px;font-size:.95em}
-    .form-group{margin-bottom:30px}
-    label.main-label{display:block;margin-bottom:8px;color:#333;font-weight:600;font-size:1.1em}
-    input[type="text"],input[type="email"],input[type="tel"]{width:100%;padding:12px 15px;border:2px solid #e0e0e0;border-radius:10px;font-size:16px}
-    .color-selector{display:grid;grid-template-columns:repeat(auto-fill,minmax(80px,1fr));gap:15px;margin-top:15px}
-    .color-option{text-align:center;cursor:pointer}
-    .color-option input[type="radio"]{display:none}
-    .color-box-wrapper{position:relative;padding-bottom:100%;border-radius:12px;overflow:hidden;border:3px solid #e0e0e0}
-    .color-box{position:absolute;top:0;left:0;width:100%;height:100%}
-    .color-name{margin-top:8px;font-size:.9em;color:#333;font-weight:600}
-    button.primary{width:100%;padding:18px;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);color:#fff;border:none;border-radius:12px;font-size:20px;font-weight:700;cursor:pointer;margin-top:20px}
-    .payment-option{display:flex;align-items:center;padding:25px;border:3px solid #e0e0e0;border-radius:12px;margin-bottom:20px;cursor:pointer}
-    .payment-option input[type="radio"]{margin-right:20px;width:24px;height:24px;cursor:pointer}
-    .order-summary{background:#eef;padding:25px;border-radius:15px;margin-bottom:30px}
-    .summary-item{display:flex;justify-content:space-between;margin-bottom:12px;padding-bottom:12px;border-bottom:2px solid #ccd}
+    body {
+      font-family: Arial, sans-serif;
+      background: #0a0a0a;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 500px;
+      margin: auto;
+      padding: 20px;
+      background: #111;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+    }
+
+    input, select, textarea, button {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border-radius: 8px;
+      border: none;
+      font-size: 16px;
+    }
+
+    button {
+      background: #6a00ff;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #5200cc;
+    }
   </style>
 </head>
-
 <body>
-  <div class="hero-section">
-    <h1>✒️ Custom Pens</h1>
-    <p>Design Your Perfect Personalized Writing Instrument</p>
-  </div>
 
-  <div class="pen-showcase">
-    <div class="pen-card"><div class="pen-image">🖊️</div><h3>Classic</h3><p>Elegant & Professional</p></div>
-    <div class="pen-card"><div class="pen-image">✒️</div><h3>Premium</h3><p>Luxury Feel</p></div>
-    <div class="pen-card"><div class="pen-image">🖋️</div><h3>Executive</h3><p>Business Style</p></div>
-    <div class="pen-card"><div class="pen-image">✍️</div><h3>Custom</h3><p>Your Design</p></div>
-  </div>
+  <h1>🪐 Nebula Pens – Custom Order</h1>
 
   <div class="container">
-    <!-- PAGE 1 -->
-    <div id="page1" class="page active">
-      <h2>🎨 Customize Your Pen</h2>
-      <p class="subtitle">Make it uniquely yours!</p>
+    <form id="orderForm">
 
-      <form id="orderForm">
-        <div class="form-group">
-          <label class="main-label">Custom Name *</label>
-          <input type="text" id="customName" required>
-        </div>
+      <input type="text" id="customerName" placeholder="Full Name" required />
 
-        <div class="form-group">
-          <label class="main-label">Body Color *</label>
-          <div class="color-selector">
-            <label class="color-option"><input type="radio" name="bodyColor" value="Red" required><div class="color-box-wrapper"><div class="color-box" style="background:red"></div></div><div class="color-name">Red</div></label>
-            <label class="color-option"><input type="radio" name="bodyColor" value="Blue"><div class="color-box-wrapper"><div class="color-box" style="background:blue"></div></div><div class="color-name">Blue</div></label>
-          </div>
-        </div>
+      <input type="tel" id="phoneNumber" placeholder="Phone Number" required />
 
-        <div class="form-group">
-          <label class="main-label">Grip Color *</label>
-          <div class="color-selector">
-            <label class="color-option"><input type="radio" name="gripColor" value="Black" required><div class="color-box-wrapper"><div class="color-box" style="background:black"></div></div><div class="color-name">Black</div></label>
-            <label class="color-option"><input type="radio" name="gripColor" value="White"><div class="color-box-wrapper"><div class="color-box" style="background:white"></div></div><div class="color-name">White</div></label>
-          </div>
-        </div>
+      <input type="email" id="customerEmail" placeholder="Email Address" required />
 
-        <div class="form-group"><label class="main-label">Phone *</label><input type="tel" id="phone" required></div>
-        <div class="form-group"><label class="main-label">Email *</label><input type="email" id="email" required></div>
-        <div class="form-group"><label class="main-label">Address *</label><input type="text" id="address" required></div>
+      <textarea id="address" placeholder="Full Address" required></textarea>
 
-        <button class="primary" type="button" onclick="goToPayment()">Confirm Order →</button>
-      </form>
-    </div>
+      <!-- Body Colour -->
+      <label>Body Colour:</label>
+      <select id="penBodyColor" required>
+        <option value="">Select Body Colour</option>
+        <option>Red</option>
+        <option>Orange</option>
+        <option>Yellow</option>
+        <option>Green</option>
+        <option>Blue</option>
+        <option>Indigo</option>
+        <option>Violet</option>
+        <option>Pink</option>
+        <option>Silver</option>
+        <option>Gold</option>
+        <option>Black</option>
+        <option>White</option>
+      </select>
 
-    <!-- PAGE 2 -->
-    <div id="page2" class="page">
-      <h2>💳 Payment Method</h2>
+      <!-- Grip Colour -->
+      <label>Grip Colour:</label>
+      <select id="gripColor" required>
+        <option value="">Select Grip Colour</option>
+        <option>Red</option>
+        <option>Orange</option>
+        <option>Yellow</option>
+        <option>Green</option>
+        <option>Blue</option>
+        <option>Indigo</option>
+        <option>Violet</option>
+        <option>Pink</option>
+        <option>Silver</option>
+        <option>Gold</option>
+        <option>Black</option>
+        <option>White</option>
+      </select>
 
-      <div class="order-summary">
-        <div class="summary-item"><span>Name:</span><span id="summaryName">-</span></div>
-        <div class="summary-item"><span>Body:</span><span id="summaryBody">-</span></div>
-        <div class="summary-item"><span>Grip:</span><span id="summaryGrip">-</span></div>
-        <div class="summary-item"><span>Phone:</span><span id="summaryPhone">-</span></div>
-        <div class="summary-item"><span>Email:</span><span id="summaryEmail">-</span></div>
-        <div class="summary-item"><span>Address:</span><span id="summaryAddress">-</span></div>
-      </div>
+      <!-- Ink Colour -->
+      <label>Ink Colour:</label>
+      <select id="inkColor" required>
+        <option value="">Select Ink Colour</option>
+        <option>Blue</option>
+        <option>Black</option>
+      </select>
 
-      <label class="payment-option">
-        <input type="radio" name="payment" value="UPI" required> UPI
-      </label>
-      <label class="payment-option">
-        <input type="radio" name="payment" value="COD"> Cash on Delivery
-      </label>
+      <!-- Quantity -->
+      <label>Quantity:</label>
+      <select id="quantity" required>
+        <option value="1">1 Pen</option>
+        <option value="2">2 Pens</option>
+        <option value="3">3 Pens</option>
+        <option value="5">5 Pens</option>
+        <option value="10">10 Pens</option>
+      </select>
 
-      <button class="primary" type="button" onclick="completeOrder()">Complete Order ✓</button>
-    </div>
-
-    <!-- PAGE 3: UPI -->
-    <div id="page3" class="page">
-      <h2>Scan & Pay</h2>
-      <p>Scan QR and pay ₹90</p>
-      <button class="primary" onclick="finishOrder()">Finish Order</button>
-    </div>
-
-    <!-- PAGE 4: THANK YOU -->
-    <div id="page4" class="page">
-      <h2>Order Complete 🎉</h2>
-      <p>Thank you! Your pen is on the way.</p>
-    </div>
+      <button type="submit">Submit Order</button>
+    </form>
   </div>
 
-  <!-- GOOGLE SCRIPT + LOGIC -->
   <script>
+    const scriptURL = "https://script.google.com/macros/s/AKfycbzoeh6ltmbewred-Gd--1fSFHouUHgflFUuuHIPRXYYrKf_ck7dRiND2mJFJRjgK7H-/exec";
 
-    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzoeh6ltmbewred-Gd--1fSFHouUHgflFUuuHIPRXYYrKf_ck7dRiND2mJFJRjgK7H-/exec";
+    document.getElementById("orderForm").addEventListener("submit", function (e) {
+      e.preventDefault();
 
-    let order = {};
+      const orderData = {
+        customerName: document.getElementById("customerName").value,
+        phoneNumber: document.getElementById("phoneNumber").value,
+        customerEmail: document.getElementById("customerEmail").value,
+        address: document.getElementById("address").value,
+        penBodyColor: document.getElementById("penBodyColor").value,
+        gripColor: document.getElementById("gripColor").value,
+        inkColor: document.getElementById("inkColor").value,
+        quantity: document.getElementById("quantity").value
+      };
 
-    function showPage(id) {
-      document.querySelectorAll(".page").forEach(p => p.classList.remove("active"));
-      document.getElementById(id).classList.add("active");
-      window.scrollTo(0,0);
-    }
-
-    function goToPayment() {
-      order.customName = document.getElementById("customName").value.trim();
-      order.bodyColor = document.querySelector("input[name='bodyColor']:checked")?.value;
-      order.gripColor = document.querySelector("input[name='gripColor']:checked")?.value;
-      order.phone = document.getElementById("phone").value.trim();
-      order.email = document.getElementById("email").value.trim();
-      order.address = document.getElementById("address").value.trim();
-
-      if (!order.customName || !order.bodyColor || !order.gripColor || !order.phone || !order.email || !order.address) {
-        alert("Fill all fields!");
-        return;
-      }
-
-      document.getElementById("summaryName").innerText = order.customName;
-      document.getElementById("summaryBody").innerText = order.bodyColor;
-      document.getElementById("summaryGrip").innerText = order.gripColor;
-      document.getElementById("summaryPhone").innerText = order.phone;
-      document.getElementById("summaryEmail").innerText = order.email;
-      document.getElementById("summaryAddress").innerText = order.address;
-
-      showPage("page2");
-    }
-
-    function completeOrder() {
-      const payment = document.querySelector("input[name='payment']:checked");
-      if (!payment) {
-        alert("Select a payment method!");
-        return;
-      }
-
-      order.payment = payment.value;
-
-      if (payment.value === "UPI") {
-        showPage("page3");
-      } else {
-        sendToGoogle();
-        showPage("page4");
-      }
-    }
-
-    function finishOrder() {
-      sendToGoogle();
-      showPage("page4");
-    }
-
-    // SEND DATA TO GOOGLE SCRIPT
-    function sendToGoogle() {
-      fetch(SCRIPT_URL, {
+      fetch(scriptURL, {
         method: "POST",
-        body: JSON.stringify(order),
+        body: JSON.stringify(orderData)
       })
-      .then(res => console.log("Order sent!"))
-      .catch(err => console.error("Error:", err));
-    }
-
+        .then((res) => {
+          alert("Order Sent Successfully! 🚀");
+          document.getElementById("orderForm").reset();
+        })
+        .catch((err) => {
+          alert("Error sending order!");
+          console.error(err);
+        });
+    });
   </script>
 
 </body>
 </html>
-
-
