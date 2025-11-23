@@ -1,3 +1,93 @@
+<script>
+let orderData = {};
+
+function goToPayment() {
+    const customName = (document.getElementById('customName')?.value || '').trim() || 'Not provided';
+    const bodyColorInput = document.querySelector('input[name="bodyColor"]:checked');
+    const gripColorInput = document.querySelector('input[name="gripColor"]:checked');
+    const phone = (document.getElementById('phone')?.value || '').trim() || 'Not provided';
+    const email = (document.getElementById('email')?.value || '').trim() || 'Not provided';
+    const address = (document.getElementById('address')?.value || '').trim() || 'Not provided';
+
+    if (!bodyColorInput || !gripColorInput) {
+        alert('Please select both Body and Grip colors!');
+        return;
+    }
+
+    orderData = {
+        customName: customName,
+        bodyColor: bodyColorInput?.value || 'Not provided',
+        gripColor: gripColorInput?.value || 'Not provided',
+        phone: phone,
+        email: email,
+        address: address
+    };
+
+    // Update summary safely
+    document.getElementById('summaryName').textContent = orderData.customName;
+    document.getElementById('summaryBody').textContent = orderData.bodyColor;
+    document.getElementById('summaryGrip').textContent = orderData.gripColor;
+    document.getElementById('summaryPhone').textContent = orderData.phone;
+    document.getElementById('summaryEmail').textContent = orderData.email;
+    document.getElementById('summaryAddress').textContent = orderData.address;
+
+    document.getElementById('page1').classList.remove('active');
+    document.getElementById('page2').classList.add('active');
+    window.scrollTo(0, 0);
+}
+
+function completeOrder() {
+    const paymentMethodInput = document.querySelector('input[name="payment"]:checked');
+    if (!paymentMethodInput) {
+        alert('Please select a payment method!');
+        return;
+    }
+
+    orderData.paymentMethod = paymentMethodInput?.value || 'Not provided';
+
+    if (orderData.paymentMethod === 'UPI') {
+        document.getElementById('page2').classList.remove('active');
+        document.getElementById('page3').classList.add('active');
+    } else {
+        sendOrderEmail();
+        document.getElementById('page2').classList.remove('active');
+        document.getElementById('page4').classList.add('active');
+    }
+    window.scrollTo(0, 0);
+}
+
+function confirmUPIPayment() {
+    document.getElementById('page3').classList.remove('active');
+    document.getElementById('page4').classList.add('active');
+    window.scrollTo(0, 0);
+    setTimeout(sendOrderEmail, 500);
+}
+
+function sendOrderEmail() {
+    const orderDetails = {
+        ...orderData,
+        orderDate: new Date().toLocaleString()
+    };
+
+    fetch('https://script.google.com/macros/s/AKfycbxzrAgwt46ulQpMWz2xIoLPFfi6oufbhWJ78z2Y62y1BRl6-GnJMWIPvzZvTrM0iO4D/exec', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(orderDetails)
+    })
+    .then(() => console.log('Order sent successfully!'))
+    .catch((error) => console.error('Error sending order:', error));
+}
+
+// Payment selection effect
+document.querySelectorAll('.payment-option').forEach(option => {
+    option.addEventListener('click', function() {
+        document.querySelectorAll('.payment-option').forEach(opt => opt.classList.remove('selected'));
+        this.classList.add('selected');
+        const radio = this.querySelector('input[type="radio"]');
+        if (radio) radio.checked = true;
+    });
+});
+</script>
 <!DOCTYPE html>
 <html lang="en">
 <head>
