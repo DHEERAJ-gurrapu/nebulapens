@@ -6,9 +6,11 @@
 <title>Custom Pens - Personalized Writing Instruments</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Segoe UI',Tahoma, Geneva, Verdana, sans-serif;
-     background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);
-     min-height:100vh;padding:20px;color:#333}
+body{
+  font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+  background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);
+  min-height:100vh;padding:20px;color:#333
+}
 .hero-section{text-align:center;color:#fff;padding:40px 20px;max-width:1200px;margin:0 auto 30px}
 .hero-section h1{font-size:3.5em;margin-bottom:15px;text-shadow:2px 2px 4px rgba(0,0,0,.3)}
 .hero-section p{font-size:1.3em;text-shadow:1px 1px 2px rgba(0,0,0,.3)}
@@ -19,13 +21,14 @@ h2{color:#667eea;margin-bottom:10px;font-size:2em}
 .form-group{margin-bottom:20px}
 label.main-label{display:block;margin-bottom:8px;font-weight:700;font-size:1.05em}
 input[type="text"],input[type="email"],input[type="tel"],input[type="number"]{
-  width:100%;padding:12px 14px;border:2px solid #e0e0e0;border-radius:10px;font-size:15px;
-}
+  width:100%;padding:12px 14px;border:2px solid #e0e0e0;border-radius:10px;font-size:15px;}
 .color-selector{display:grid;grid-template-columns:repeat(auto-fill,minmax(90px,1fr));gap:14px;margin-top:12px}
 .color-option{text-align:center;cursor:pointer;user-select:none}
 .color-option input[type="radio"]{display:none}
-.color-box-wrapper{position:relative;padding-bottom:100%;border-radius:12px;overflow:hidden;
-transition:all .18s ease;border:3px solid #eaeaea;background:#fff;}
+.color-box-wrapper{
+  position:relative;padding-bottom:100%;border-radius:12px;overflow:hidden;
+  transition:all .18s ease;border:3px solid #eaeaea;background:#fff;
+}
 .color-option:hover .color-box-wrapper{transform:scale(1.06);border-color:#667eea}
 .color-option input[type="radio"]:checked + .color-box-wrapper{
   border:4px solid #333;transform:scale(1.05);box-shadow:0 8px 20px rgba(0,0,0,.18)
@@ -34,77 +37,154 @@ transition:all .18s ease;border:3px solid #eaeaea;background:#fff;}
 .color-name{margin-top:8px;font-size:.92em;font-weight:700}
 .inline-row{display:flex;gap:12px;align-items:center}
 .small-radio{display:inline-flex;align-items:center;gap:8px;margin-right:12px}
-button.primary{width:100%;padding:16px 18px;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);color:#fff;border:none;border-radius:12px;font-size:18px;font-weight:800;cursor:pointer;margin-top:8px}
+button.primary{
+  width:100%;padding:16px 18px;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);
+  color:#fff;border:none;border-radius:12px;font-size:18px;font-weight:800;cursor:pointer;margin-top:8px}
 .order-summary{background:linear-gradient(135deg,#f8f9ff 0%,#e8ebff 100%);padding:18px;border-radius:12px;margin-bottom:18px;border:2px solid #667eea}
 .summary-item{display:flex;justify-content:space-between;margin-bottom:10px;padding-bottom:8px;border-bottom:1px dashed rgba(102,126,234,.12)}
 .muted{color:#666}
-/* responsive tweaks */
-@media (max-width:520px){
-  .color-selector{grid-template-columns:repeat(3,1fr)}
-}
+@media (max-width:520px){.color-selector{grid-template-columns:repeat(3,1fr)}}
 </style>
 </head>
 <body>
+
 <div class="hero-section">
 <h1>✒️ Custom Pens</h1>
 <p>Design Your Perfect Personalized Writing Instrument</p>
 </div>
 
 <div class="container">
+
 <!-- PAGE 1 -->
 <div id="page1" class="page active">
 <h2>🎨 Customize Your Pen</h2>
 <p class="subtitle">Make it uniquely yours!</p>
 
 <form id="orderForm" onsubmit="return false;">
-  <div class="form-group">
-    <label class="main-label" for="customName">Custom Name on Pen *</label>
-    <input type="text" id="customName" required placeholder="Enter name to be printed">
-  </div>
 
-  <div class="form-group">
-    <label class="main-label">Body Color *</label>
-    <div class="color-selector">
-      <label class="color-option"><input type="radio" name="bodyColor" value="Red" required><div class="color-box-wrapper"><div class="color-box" style="background:#FF0000"></div></div><div class="color-name">Red</div></label>
-            <label class="color-option"><input type="radio" name="bodyColor" value="orange" required><div class="color-box-wrapper"><div class="color-box" style="background:#FF0000"></div></div><div class="color-name">Red</div></label>
-      <label class="color-option"><input type="radio" name="bodyColor" value="Yellow" required><div class="color-box-wrapper"><div class="color-box" style="background:#FF0000"></div></div><div class="color-name">Red</div></label>
-      <label class="color-option"><input type="radio" name="bodyColor" value="green" required><div class="color-box-wrapper"><div class="color-box" style="background:#FF0000"></div></div><div class="color-name">Red</div></label>
-      <label class="color-option"><input type="radio" name="bodyColor" value="Pink" required><div class="color-box-wrapper"><div class="color-box" style="background:#FF0000"></div></div><div class="color-name">Red</div></label>
-         <label class="color-option"><input type="radio" name="bodyColor" value="Blue"><div class="color-box-wrapper"><div class="color-box" style="background:#1E3FFF"></div></div><div class="color-name">Blue</div></label>
-      <label class="color-option"><input type="radio" name="bodyColor" value="Gold"><div class="color-box-wrapper"><div class="color-box" style="background:linear-gradient(135deg,#FFD700,#FFA500)"></div></div><div class="color-name">Gold</div></label>
-    </div>
-  </div>
+<!-- Custom Name -->
+<div class="form-group">
+<label class="main-label" for="customName">Custom Name on Pen *</label>
+<input type="text" id="customName" required placeholder="Enter name to be printed">
+</div>
 
-  <div class="form-group">
-    <label class="main-label">Grip Color *</label>
-    <div class="color-selector">
-      <label class="color-option"><input type="radio" name="bodyColor" value="Red" required><div class="color-box-wrapper"><div class="color-box" style="background:#FF0000"></div></div><div class="color-name">Red</div></label>
-            <label class="color-option"><input type="radio" name="bodyColor" value="orange" required><div class="color-box-wrapper"><div class="color-box" style="background:#FF0000"></div></div><div class="color-name">Red</div></label>
-      <label class="color-option"><input type="radio" name="bodyColor" value="Yellow" required><div class="color-box-wrapper"><div class="color-box" style="background:#FF0000"></div></div><div class="color-name">Red</div></label>
-      <label class="color-option"><input type="radio" name="bodyColor" value="green" required><div class="color-box-wrapper"><div class="color-box" style="background:#FF0000"></div></div><div class="color-name">Red</div></label>
-      <label class="color-option"><input type="radio" name="bodyColor" value="Pink" required><div class="color-box-wrapper"><div class="color-box" style="background:#FF0000"></div></div><div class="color-name">Red</div></label>
-         <label class="color-option"><input type="radio" name="bodyColor" value="Blue"><div class="color-box-wrapper"><div class="color-box" style="background:#1E3FFF"></div></div><div class="color-name">Blue</div></label>
-  
-  </div>
+<!-- BODY COLOR -->
+<div class="form-group">
+<label class="main-label">Body Color *</label>
+<div class="color-selector">
 
-  <div class="form-group">
-    <label class="main-label">Ink Color *</label>
-    <div class="inline-row">
-      <label class="small-radio"><input type="radio" name="inkColor" value="Blue" required> Blue</label>
-      <label class="small-radio"><input type="radio" name="inkColor" value="Black"> Black</label>
-    </div>
-  </div>
+<label class="color-option">
+<input type="radio" name="bodyColor" value="Red" required>
+<div class="color-box-wrapper"><div class="color-box" style="background:#FF0000"></div></div>
+<div class="color-name">Red</div></label>
 
-  <div class="form-group"><label class="main-label" for="phone">Phone Number *</label><input type="tel" id="phone" required placeholder="+91 98765 43210"></div>
-  <div class="form-group"><label class="main-label" for="email">Email Address *</label><input type="email" id="email" required placeholder="your.email@example.com"></div>
-  <div class="form-group"><label class="main-label" for="address">Delivery Address *</label><input type="text" id="address" required placeholder="Enter your full address"></div>
+<label class="color-option">
+<input type="radio" name="bodyColor" value="Orange">
+<div class="color-box-wrapper"><div class="color-box" style="background:#FFA500"></div></div>
+<div class="color-name">Orange</div></label>
 
-  <div class="form-group">
-    <label class="main-label" for="qty">Quantity</label>
-    <input type="number" id="qty" min="1" value="1" style="width:120px">
-  </div>
+<label class="color-option">
+<input type="radio" name="bodyColor" value="Yellow">
+<div class="color-box-wrapper"><div class="color-box" style="background:#FFFF00"></div></div>
+<div class="color-name">Yellow</div></label>
 
-  <button class="primary" type="button" onclick="goToPayment()">Confirm Order →</button>
+<label class="color-option">
+<input type="radio" name="bodyColor" value="Green">
+<div class="color-box-wrapper"><div class="color-box" style="background:#00FF00"></div></div>
+<div class="color-name">Green</div></label>
+
+<label class="color-option">
+<input type="radio" name="bodyColor" value="Blue">
+<div class="color-box-wrapper"><div class="color-box" style="background:#1E3FFF"></div></div>
+<div class="color-name">Blue</div></label>
+
+<label class="color-option">
+<input type="radio" name="bodyColor" value="Pink">
+<div class="color-box-wrapper"><div class="color-box" style="background:#FF69B4"></div></div>
+<div class="color-name">Pink</div></label>
+
+<label class="color-option">
+<input type="radio" name="bodyColor" value="Gold">
+<div class="color-box-wrapper"><div class="color-box" style="background:linear-gradient(135deg,#FFD700,#FFA500)"></div></div>
+<div class="color-name">Gold</div></label>
+
+<label class="color-option">
+<input type="radio" name="bodyColor" value="Silver">
+<div class="color-box-wrapper"><div class="color-box" style="background:linear-gradient(135deg,#C0C0C0,#E0E0E0)"></div></div>
+<div class="color-name">Silver</div></label>
+
+</div>
+</div>
+
+<!-- GRIP COLOR -->
+<div class="form-group">
+<label class="main-label">Grip Color *</label>
+<div class="color-selector">
+
+<label class="color-option">
+<input type="radio" name="gripColor" value="Red" required>
+<div class="color-box-wrapper"><div class="color-box" style="background:#FF0000"></div></div>
+<div class="color-name">Red</div></label>
+
+<label class="color-option">
+<input type="radio" name="gripColor" value="Orange">
+<div class="color-box-wrapper"><div class="color-box" style="background:#FFA500"></div></div>
+<div class="color-name">Orange</div></label>
+
+<label class="color-option">
+<input type="radio" name="gripColor" value="Yellow">
+<div class="color-box-wrapper"><div class="color-box" style="background:#FFFF00"></div></div>
+<div class="color-name">Yellow</div></label>
+
+<label class="color-option">
+<input type="radio" name="gripColor" value="Green">
+<div class="color-box-wrapper"><div class="color-box" style="background:#00FF00"></div></div>
+<div class="color-name">Green</div></label>
+
+<label class="color-option">
+<input type="radio" name="gripColor" value="Blue">
+<div class="color-box-wrapper"><div class="color-box" style="background:#1E3FFF"></div></div>
+<div class="color-name">Blue</div></label>
+
+<label class="color-option">
+<input type="radio" name="gripColor" value="Pink">
+<div class="color-box-wrapper"><div class="color-box" style="background:#FF69B4"></div></div>
+<div class="color-name">Pink</div></label>
+
+<label class="color-option">
+<input type="radio" name="gripColor" value="Gold">
+<div class="color-box-wrapper"><div class="color-box" style="background:linear-gradient(135deg,#FFD700,#FFA500)"></div></div>
+<div class="color-name">Gold</div></label>
+
+<label class="color-option">
+<input type="radio" name="gripColor" value="Silver">
+<div class="color-box-wrapper"><div class="color-box" style="background:linear-gradient(135deg,#C0C0C0,#E0E0E0)"></div></div>
+<div class="color-name">Silver</div></label>
+
+</div>
+</div>
+
+<!-- INK -->
+<div class="form-group">
+<label class="main-label">Ink Color *</label>
+<div class="inline-row">
+  <label class="small-radio"><input type="radio" name="inkColor" value="Blue" required> Blue</label>
+  <label class="small-radio"><input type="radio" name="inkColor" value="Black"> Black</label>
+</div>
+</div>
+
+<!-- OTHER FIELDS -->
+<div class="form-group"><label class="main-label" for="phone">Phone Number *</label><input type="tel" id="phone" required></div>
+<div class="form-group"><label class="main-label" for="email">Email *</label><input type="email" id="email" required></div>
+<div class="form-group"><label class="main-label" for="address">Delivery Address *</label><input type="text" id="address" required></div>
+
+<div class="form-group">
+<label class="main-label" for="qty">Quantity</label>
+<input type="number" id="qty" min="1" value="1" style="width:120px">
+</div>
+
+<button class="primary" type="button" onclick="goToPayment()">Confirm Order →</button>
+
 </form>
 </div>
 
@@ -129,33 +209,34 @@ button.primary{width:100%;padding:16px 18px;background:linear-gradient(135deg,#6
 <button class="primary" type="button" onclick="completeOrder()">Complete Order ✓</button>
 </div>
 
-<!-- PAGE 3: UPI -->
+<!-- PAGE 3 -->
 <div id="page3" class="page">
 <h2>Scan & Pay</h2>
-<p class="muted">Scan QR code to pay ₹90 (example)</p>
+<p class="muted">Scan QR code to pay ₹90</p>
 <div style="text-align:center;margin:18px 0;">
-  <div style="background:linear-gradient(135deg,#00BAF2 0%,#00A7E5 100%);padding:20px;border-radius:16px;display:inline-block;box-shadow:0 15px 40px rgba(0,0,0,.12)">
+  <div style="background:#00A7E5;padding:20px;border-radius:16px;display:inline-block;">
     <div style="background:white;padding:18px;border-radius:12px;margin-bottom:12px">
-      <div style="color:#00BAF2;font-size:1.6em;font-weight:700;margin-bottom:8px">paytm</div>
-      <img src="/mnt/data/Screenshot 2025-11-22 at 11.46.59 PM.png" alt="Paytm QR" style="width:240px;height:240px;border-radius:10px;display:block;margin:0 auto 10px">
+      <div style="color:#00A7E5;font-size:1.6em;font-weight:700;margin-bottom:8px">paytm</div>
+      <img src="/mnt/data/Screenshot 2025-11-22 at 11.46.59 PM.png" style="width:240px;height:240px;border-radius:10px;margin:0 auto 10px">
       <div style="margin-top:8px;color:#333;font-size:1em;font-weight:600">⚡ 9392383055@pthfc</div>
     </div>
   </div>
 </div>
-<p class="muted">Your pen will be delivered in 3–5 business days.</p>
-<div style="margin-top:12px"><button class="primary" onclick="finishOrder()">Finish Order</button></div>
+<p class="muted">Delivery in 3–5 days.</p>
+<button class="primary" onclick="finishOrder()">Finish Order</button>
 </div>
 
-<!-- PAGE 4: THANK YOU -->
+<!-- PAGE 4 -->
 <div id="page4" class="page">
 <h2>Order Complete 🎉</h2>
-<p>Thank you! Your pen is on the way. We'll contact you at the provided email/phone.</p>
+<p>Your pen is on the way!</p>
 </div>
+
 </div>
 
 <script>
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxzrAgwt46ulQpMWz2xIoLPFfi6oufbhWJ78z2Y62y1BRl6-GnJMWIPvzZvTrM0iO4D/exec";
-let order = {};
+const SCRIPT_URL="https://script.google.com/macros/s/AKfycbxzrAgwt46ulQpMWz2xIoLPFfi6oufbhWJ78z2Y62y1BRl6-GnJMWIPvzZvTrM0iO4D/exec";
+let order={};
 
 function showPage(id){
   document.querySelectorAll(".page").forEach(p=>p.classList.remove("active"));
@@ -164,72 +245,52 @@ function showPage(id){
 }
 
 function goToPayment(){
-  order.customerName = document.getElementById("customName").value.trim();
-  order.penBodyColor = document.querySelector("input[name='bodyColor']:checked")?.value;
-  order.gripColor = document.querySelector("input[name='gripColor']:checked")?.value;
-  order.selectedInk = document.querySelector("input[name='inkColor']:checked")?.value;
-  order.phoneNumber = document.getElementById("phone").value.trim();
-  order.customerEmail = document.getElementById("email").value.trim();
-  order.address = document.getElementById("address").value.trim();
-  order.selectedQuantity = document.getElementById("qty").value || "1";
+  order.customerName=document.getElementById("customName").value.trim();
+  order.penBodyColor=document.querySelector("input[name='bodyColor']:checked")?.value;
+  order.gripColor=document.querySelector("input[name='gripColor']:checked")?.value;
+  order.selectedInk=document.querySelector("input[name='inkColor']:checked")?.value;
+  order.phoneNumber=document.getElementById("phone").value.trim();
+  order.customerEmail=document.getElementById("email").value.trim();
+  order.address=document.getElementById("address").value.trim();
+  order.selectedQuantity=document.getElementById("qty").value || "1";
 
   if(!order.customerName||!order.penBodyColor||!order.gripColor||!order.selectedInk||!order.phoneNumber||!order.customerEmail||!order.address){
-    alert("Please fill all required fields and choose colors/ink.");
+    alert("Please fill all required fields.");
     return;
   }
 
-  // update summary
-  document.getElementById("summaryName").innerText = order.customerName;
-  document.getElementById("summaryBody").innerText = order.penBodyColor;
-  document.getElementById("summaryGrip").innerText = order.gripColor;
-  document.getElementById("summaryInk").innerText = order.selectedInk;
-  document.getElementById("summaryQty").innerText = order.selectedQuantity;
-  document.getElementById("summaryPhone").innerText = order.phoneNumber;
-  document.getElementById("summaryEmail").innerText = order.customerEmail;
-  document.getElementById("summaryAddress").innerText = order.address;
+  document.getElementById("summaryName").innerText=order.customerName;
+  document.getElementById("summaryBody").innerText=order.penBodyColor;
+  document.getElementById("summaryGrip").innerText=order.gripColor;
+  document.getElementById("summaryInk").innerText=order.selectedInk;
+  document.getElementById("summaryQty").innerText=order.selectedQuantity;
+  document.getElementById("summaryPhone").innerText=order.phoneNumber;
+  document.getElementById("summaryEmail").innerText=order.customerEmail;
+  document.getElementById("summaryAddress").innerText=order.address;
 
   showPage("page2");
 }
 
 function completeOrder(){
-  const payment = document.querySelector("input[name='payment']:checked");
-  if(!payment){alert("Select a payment method."); return;}
-  order.paymentMethod = payment.value;
+  const payment=document.querySelector("input[name='payment']:checked");
+  if(!payment){alert("Select a payment method.");return;}
+  order.paymentMethod=payment.value;
 
-  if(order.paymentMethod==="UPI"){
-    showPage("page3");
-  } else {
-    sendToGoogle();
-    showPage("page4");
-  }
+  if(order.paymentMethod==="UPI") showPage("page3");
+  else {sendToGoogle();showPage("page4");}
 }
 
-function finishOrder(){
-  sendToGoogle();
-  showPage("page4");
-}
+function finishOrder(){sendToGoogle();showPage("page4");}
 
 function sendToGoogle(){
-  if(!order.selectedQuantity) order.selectedQuantity="1";
   fetch(SCRIPT_URL,{
     method:"POST",
     headers:{'Content-Type':'application/json'},
-    body:JSON.stringify({...order, orderDate: new Date().toLocaleString()}),
+    body:JSON.stringify({...order,orderDate:new Date().toLocaleString()}),
     mode:'no-cors'
-  })
-  .then(()=>console.log("Order sent to Google Script!"))
-  .catch(err=>console.error("Error sending order:",err));
-}
-
-// Payment button selection effect
-document.querySelectorAll('.payment-option').forEach(option=>{
-  option.addEventListener('click', function(){
-    document.querySelectorAll('.payment-option').forEach(opt=>opt.classList.remove('selected'));
-    this.classList.add('selected');
-    const radio=this.querySelector('input[type="radio"]');
-    if(radio) radio.checked=true;
   });
-});
+}
 </script>
+
 </body>
 </html>
